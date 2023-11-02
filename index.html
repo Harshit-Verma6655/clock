@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Lato&family=League+Spartan:wght@300&family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+        }
+        body{
+            background-color: rgba(2, 19, 26, 0.906);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .outer{
+            width:70vw;
+            height: 90vh;
+            background-color: rgba(96, 95, 95, 0.516);
+          text-align: center;
+          font-size: 100px;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+          flex-direction: column;
+          font-weight: 800;
+        }
+        .time{
+            font-size: 100px;
+            background-color: rgba(0, 0, 0, 0.733);
+            color: rgb(215, 15, 88);
+            width: 50vw;
+            height: 40vh;
+            text-align: center;
+            font-family: 'Bungee Spice', sans-serif;
+           
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+    <title>Watch</title>
+</head>
+<body>
+    <div class="container">
+        <div class="outer">
+           
+            <div class="time">
+              
+            </div>
+            Digital Clock
+        </div>
+    </div>
+
+
+
+
+    <script >
+         
+        setInterval(time, 1000);
+        function time(){
+            let date=new Date();
+           let hour= date.getHours();
+           let hr=hour.toString().padStart(2,'0');
+           let minute=date.getMinutes();
+           let mi=minute.toString().padStart(2,'0');
+           let sec=date.getSeconds();
+           let se=sec.toString().padStart(2,'0');
+            document.querySelector(".time").innerHTML=`${hr}:${mi}:${se}`;
+           
+        }
+
+
+    </script>
+</body>
+</html>
